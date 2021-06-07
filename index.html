@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
   </head>
@@ -13,6 +13,41 @@
     Chromium <span id="chrome-version"></span>,
     and Electron <span id="electron-version"></span>.
 
+    <div
+      style="
+        margin: 16px;
+        font-family: monospace;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: rgb(43,46,49);
+      "
+    >
+      <div style="">
+        <input id="search"/>
+        <button id="SEARCH_LS"> SEARCH </button>
+      </div>
+      <div
+        id="error"
+        style="
+          color: red;
+          margin: 16px 0;
+        "
+      ></div>
+      <div
+        id="stderr"
+        style="
+          color: tomato;
+          margin: 16px 0;
+        "
+      ></div>
+      <div
+        id="stdout"
+        style="
+          color: green;
+          margin: 16px 0;
+        "
+      ></div>
+    </div>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>
